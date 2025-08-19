@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+  <head>
+        <!-- Metadatos Generales Web-->
+        <meta charset="UTF-8" />                                                        <!-- Define la codficación de caracteres (simbolos)-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />        <!--  Controla como se ve la pagina en los dispositivos moviles-->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />                         <!--  width=device-width hace que la página se ajuste al ancho del dispositivo.-->
+                                                                                        <!--  initial-scale=1.0 indica que no se haga zoom inicial. Para que no se vea como un escritorio de ordenador-->    
+
+
+        <!-- HTML Meta Tags -->                                                         
+        <title>Osvaldo Aquino</title>                                                   <!-- Título que aparece en la pestaña del navegador. -->
+        <meta name="description" content="Curriculum Vitae @DragonFenixOwi Github" />   <!-- Descripción breve de la página, usada por buscadores como Google. -->
+        
+
+        <!-- FontAwesome -->                                                                    <!-- Carga FontAwesome, una librería de iconos muy popular -->
+        <link 
+          rel="stylesheet"                                                                      
+          href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        />                                                                                <!-- rel="stylesheet" indica que es un archivo de estilos CSS.-->
+                                                                                          <!-- href="..." es la URL de donde se descarga el CSS..-->
+        
+        <!-- Nuestro CSS Compilado o sin compilar solo CSS básico -->
+        <link rel="stylesheet" href="css/estilos.css" />
+        
+  </head>
+
+
+
+  <body>        
+    <header>
+      <!--
+        *
+        * Inicio del Bloque HEADER
+        *
+      -->
+          <div class="Contenedor-logo-BarraDeMenu">                                              <!-- div es un contenedor que permite agrupar elementos HTML (imagenes, nav, logo, entre otros) -->                                                                                                                                                             
+              <!--
+              *
+              * Se crea un contenedor que encapsula el logo y de la Barra de Menu o navegacion
+              *
+              --> 
+            <figure id="logo">
+                <!--
+                *
+                * Bloque LOGO
+                *
+                -->
+                <img src="./assets/img/owi.jpg" alt="Logo Osvaldo Aquino">           <!--
+                                                                                        - Anteriormente utilizaba la ruta de la carpeta deL ordenador. En la web no funcionara.
+                                                                                        - El atributo "alt", lee el contenido cuando la imagen no carga. 
+                                                                                        - SEO - Google y otros buscadores no "ven" imagenes, pero si leen "alt"  
+                                                                                    -->
+           </figure>
+      
+           <nav id="navegacionPrincipal">
+                <!--
+                *
+                * Bloque Links de Navegación Principal
+                *
+                -->
+            
+            <!--  AQUI INICIA LA CABECERA - HEADER - NAVBAR   -->
+            
+                    <!--  SEMANTICA CORRECTA   -->
+                  <ul>
+                        <li>
+                            <a href="index.html">  Home  </a>
+                        </li>
+                        <li><a href="1_Electronica.html"> Electronica </a></li>
+                        <li><a href="2_Industrial.html"> Industrial </a></li>
+                        <li><a href="3_Robotica.html"> Robotica </a></li>
+                        <li><a href="4_Electricidad.html"> Electricidad </a>  </li>
+                        <li><a href="5_Informatica.html"> Informatica </a></li>
+                        <li><a href="6_JavaScript.html"> JavaScript </a></li>
+                         <li><a href="7_CurriculumVitae.html"> Curriculum Vitae </a></li>
+                        
+                  </ul>
+
+
+
+                    <!--          SEMANTICA INCORRECTA PERO FUNCIONAL
+
+                        - Funciona visualmente (sin utlizar <ul> y <li>).
+                        - Pero para un navegador, no queda claro que esos enlaces forman un grupo o lista de navegación (una barra de menu).
+                        - Por eso es menos semantico, el codigo HTML no transmite información adicional sobre la estructura de la pagina. 
+
+                                  <a href="index.html">|  Home  </a>
+                                  <a href="1_Electronica.html">|  Electronica  </a>
+                                  <a href="2_Industrial.html">| Control Industrial  </a>
+                                  <a href="3_Robotica.html">|  Robotica  </a>
+                                  <a href="4_Electricidad.html">| Electricidad  </a>            
+                                  <a href="5_Informatica.html">|  Informatica  </a>
+                                  <a href="6_Diseño Grafico.html">|  Diseño Grafico  </a>
+                                  <a href="8_Iconos.html">|  Iconos |</a>       
+                      -->
+
+
+          </nav>
+      </div>
+    </header>
+
+    <main>
+      <!--
+        *
+        * Bloque MAIN
+        *
+      -->
+        
+
+
+
+
+          <section>
+            <!--
+             *
+             * Bloque SECTION
+            -->
+
+            
+            <div class = "ObjetivoProfesional">
+                
+                  <h1> Objetivo Profesional </h1>
+                  <p> Mi objetivo profesional es  ... </p>
+
+           </div>
+
+            <div class = "Practicas">
+                
+                  <h1> Practicas</h1>
+                  <p>   - Automatización de una estación de la Célula MPS-C didáctica de Festo a partir de grafcet en step7 microwin.</p>
+                  <p>   - Análisis y control de proceso de una planta didáctica controlada por un hibrido HC900 mediante Hybrid Control Designer de Honeywell.</p>
+                  <p>   - Torneado para frentear varillas, punteo, taladro y terraja manual.</p>   
+                  <p>   - Programación en el software EcoStruxure de Schneider y simulación a partir de escenas industriales del Factory I/O.</p>
+                  <p>   - Programación en C/C++, HTML, CSS y JavaScript y Python. </p>  
+                  <p>   - Circuitos básicos neumáticos e Hidráulicos en FluidSIM.</p> 
+                  <p>   - Programación de distintos Microcontroladores (Arduino, MSP430 y PIC).  </p>
+                  
+
+           </div>
+
+
+            <div class = "ExperienciaLaboral">
+                <h1> Experiencia Loboral</h1>
+                  <p>   - Empresa</p>
+                  <p>   - Años trabajados</p>
+                  <p>   - Cargo Ocupado</p>
+                  <p>   - Tareas Realizadas</p>
+           </div>
+
+          </section>
+      
+          <article>
+            <!--
+             *
+             * Bloque ARTICLE
+             *
+            -->
+             
+            
+          </article>
+          
+          
+         <!-- <img src="_assets\img\Iron_Man_1.0.jpg" alt=""> -->
+    </main>
+
+    <footer>
+      <!--
+        *
+        * Bloque FOOTER
+        *
+        -->
+    </footer>
+
+  </body>
+</html>

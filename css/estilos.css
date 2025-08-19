@@ -1,0 +1,520 @@
+
+
+
+/* ============================================================ TODA LA PAGINA ============================================================*/
+
+
+                                            /* 
+                                                - Selector Multiple "body,html"     --->   Las reglas del codigo dentro de las llaves {} se aplicara tanto a la etiqueta (elemento) body,
+                                                                                         como a la etiqueta (elemento) HTML 
+                                                
+                                                - html        --->        Es el contenedor raiz de toda la pagina.
+                                                - body        --->        Es el contenedor principal del contenido visible.
+
+                                                - Si aplicas solo a body, algunos navegadores pueden dejar un espacio extra. Incluir html asegura consistencia en toda la pagina. 
+                                            
+                                            */
+
+body, html                                  /*  Selector Multiple "body,html"  */
+    {                                      
+        background-color: #9c9c9ca9;      /*  Se define el color de Fondo de toda la pagina   */
+        font-family: sans-serif;            /*  Se define la tipografia. Todos los hijos heredan la fuente de texto "sans-serif" */
+        margin: 0;                          /*  Quita el espacio que los navegadores ponen alrededor del body*/
+        padding: 0;                         /*  Elimina el relleno interno de html y body para que el contenido inicie al borde. */
+        
+    }
+
+
+
+
+
+/* 
+
+    EN HEADER SE UTILIZA  FLEXBOX (DISPLAY:FLEX)
+
+*/
+
+
+
+header
+    {
+        width: 100%;;                         /*  Se define que la cabecera (Header) utilice todo el espacio disponible de la ventana.*/
+        overflow: hidden;
+     
+    }
+
+
+
+/* ======================================================== CABECERA DE CADA PAGINA - LOGO + MENU ========================================================*/
+
+
+/* CONTENEDOR PARA LOS ELEMENTOS LOGO Y NAV */
+
+.Contenedor-logo-BarraDeMenu 
+    {
+        display: flex;                          /* Pone el logo y la barra de Menu en la misma Fila. Activa un modulo CSS - Modelo Flexbox (caja flexible)*/
+                                                /* Otros casos : 
+                                                        - display : Block  (el elemento ocupa todo el ancho disponible. Se coloca uno debajo de otro. */
+        align-items: center;                    /* Centra verticalmente logo y nav. Con right o left sube arriba.  */
+        justify-content: center;                /* DEFINICION
+                                                    - Elementos : NAV (barra de Menu) y el logo)
+                                                    - justify-content : priedadad de CSS que se utiliza porque el contener tiene "display:flex".
+                                                    - center, flex-start - flex-end (son valores que le doy a la propiedad) Alinea todo a la izquierda. 
+                                                            - center - ambos elementos se van al medio.
+                                                            - flex-start - ambos elementos se van a la izquierda
+                                                            - flex-end - ambos elementos se van a la derecha
+                                                            - space-between - logo a la izquierda y barra de menu a la derecha */ 
+                                                
+        gap: 2px;                              /* Espacio entre logo y nav */
+        background: #262626;                /* Se define el color de Fondo del contenedor ".Contenedor-logo.BarraDeMenu*/ 
+        padding:10px;                          /* 
+                                                    - Definimos un espacio interno entre el borde del contenedor ".Contenido_logo-BarraDeMenu" y el contenido interno (Logo y <nav>)
+                                                    - El logo y nav en este caso son etiquetas de HTML. En CSS son elementos hijos del contenedor. 
+                                                    - El espacio definido es de 10px. Espacio en todas las direcciones (arriba,abajo,izq y derecha).
+                                                    - Sin "padding, el logo y la barra de Menu quedan muy pegados al borde del rectangulo.
+                                                */
+  
+    }
+
+
+
+
+/* ESTILO PARA EL LOGO */                   
+#logo img                                       /* Utilizamos "#" porque "logo" es una "id" en HTML (<figure id="logo">) de la etiqueta figure*/
+    {
+        width: 7vw;                   /* Ajusta el tamaño del logo */
+        height: auto;                   /* Mantiene proporción */
+        display: block;
+        margin: 0;                      /* Se alinea a la izquierda */
+        border-radius: 20px;            /* Eliminamos las esquinas puntiagudas a redondeados  */
+
+    }
+
+
+
+/* ============================================================ CABECERA DE CADA PAGINA 2 ============================================================*/
+
+
+
+nav ul
+    {
+        display:flex;                        /* Pone la lista en una misma Fila.  Activa un modulo CSS - Modelo Flexbox (caja flexible)*/                       
+        list-style: none;                    /* Elimina las Viñetas*/  
+        gap: 20px;                           /* Espacio entre Home - Electronica - Control Industrial - Robotica - Electricidad - entre otros. */
+        /*flex-wrap:nowrap;*/                /* uerza a todos los elementos a mantenerse en la misma fila horizontal.*/
+        
+    }
+
+nav li
+    {           
+        flex:1;                             /* Propiedad del "display:flex" que hace que todos los <li> ocupen el msmo espacio. Ajustandose al ancho del navegador.*/
+                                            /* flex: 1 - rompe en dos lieneas frases como Control Industrial */
+
+        white-space:nowrap;                 /* Evita que el texto se rompa en dos lineas*/
+    }
+
+
+nav a                                       /* Selecciona todos los enlaces <a> que esten dentro de <nav>  (link de la barra de menu)*/
+    {
+        
+        font-size: 37px;                    /* Define el tamaño de la fuente de Home, Electronica, Indsutrial,etc. */
+        color:#1472b6;                    /* Define el color del texto de Home, Electronica, Indsutrial,etc.*/
+        text-decoration: none;              /* Eliminamos el subrayado que trae por defecto la etiqueta <a> </a>*/
+        
+    }
+
+
+    
+main
+    {
+        display:flex;
+        justify-content: center;
+       
+    }
+
+
+
+/*
+
+    SE UTILIZA  GRID 
+
+        - El problema de porque no se ajustaba los contenedores .Practicas,  .ObjetivoProfesional y .ExperienciaLaboral es debido a que solo uno de ellos tenia lo siguiente
+
+             width: 100%;                            /* Con 100% Intentamos ocupar todo el ancho disponible del padre (lo definimos con grid-template-columns: auto;  
+            max-width: 18vw;                        /* Definimos que el contenedor no sea mas grande que 15vw
+            min-width: 200px;                       /* Definimos que el contenedor no sea demasiado pequeño. Pensando en moviles y para que el texto quepa. 
+*/
+
+
+
+
+
+
+
+
+
+
+/* ============================================================ SECTION PRACTICAS - EXPERIENCIA LABORAL ============================================================*/
+
+section
+    {
+        display:grid;                           /* Convierto los contenedores(practicas, experiencialaboral,etc.) en una cuadricula. Por defecto no tiene filas ni columnas definidas*/             
+        gap: 10px;                              /* Espacio entre "Practicas" y "ExperienciaLaboral". */
+        align-items: stretch;                    /* Centra verticalmente Practicas" y "ExperienciaLaboral"· Con right o left sube arriba.  */
+        padding:10px;
+        
+
+
+        /*            REJILLA DE AREA - DISEÑAMOS LA FORMA Y DISTRIBUCIÓN (DISPOSICIÓN) DE LOS CONTENEDORES (ELEMENTOS)
+ 
+                                        [ Objetivo ] [ Experiencia ]
+                                        [ Prácticas] [ Experiencia ]
+        */
+
+        grid-template-areas:                    /* Define la diposición de los contenedores de la cuadricula con nombres. En este caso 2x2 (2 filas x 2 columnas)*/                                             
+            "Objetivo Experiencia"
+            "Practicas Experiencia";            /* Cada nombre representa a un elemento o Div (contenedor) y se declara en  
+
+                                                        - Objetivo      -->  ObjetivoProfesional
+                                                        - Experiencia   -->  ExperienciaLaboral
+                                                        - Practicas     -->  Practicas.    
+
+                                                    Se declara en cada div (hijo de "Section" )  mediante grid-area: Objetivo por ejemplo.   */  
+
+        /* DEFINIMOS EL TAMAÑO DE CADA CONTENEDOR */
+
+        grid-template-columns: auto auto;       /*    
+                                                      - La columna izquierda (Objetivo y Prácticas) mide 15vw
+                                                      - La columna derecha (Experiencia) mide 37vw 
+
+
+                                                    Establece el ancho del Contenedor div (caja) . En este caso el 30% del ancho de la ventana*
+                                                */
+                                                /* por aproximación 350px pero configuro que quiero el 30% directamente*/
+                                                /* Establece la altura del Contenedor div (caja) . En este caso el 30% del ancho de la ventana*/
+                                                    /* por aproximación 350px pero configuro que quiero el 30% directamente*/
+                                
+
+        grid-template-rows: 1fr 2fr;          /* Fila superior e inferior */
+                                              /*
+                                                vw = porcentaje del ancho de la pantalla.
+                                                fr = fracción del espacio disponible.
+                                              */
+    }
+
+
+
+/* ============================================================ OBJETIVO PROFESIONAL ============================================================*/
+.ObjetivoProfesional
+        {
+
+            grid-area: Objetivo ;
+      
+             /* ======= CREO UN CUADRADO ======= */ 
+            width: 100%;                            /* Con 100% Intentamos ocupar todo el ancho disponible del padre (lo definimos con grid-template-columns: 15vw 37vw;  */
+            max-width: 18vw;                        /* Definimos que el contenedor no sea mas grande que 15vw*/
+            min-width: 200px;                       /* Definimos que el contenedor no sea demasiado pequeño. Pensando en moviles y para que el texto quepa.*/
+
+                                                    /*vw = viewport width porcentaje del ancho de la ventana del navega. Adapta la pantalla.  */
+
+            height:auto;                            /* auto significa que la altura del contenedor se ajusta al contenido.
+                                                        Ahora el contenedor se expande según lo que contiene (h1, p, padding, etc.). 
+                                                        Resultado: las letras ya no se salen, porque el contenedor crece con el texto.*/
+                                                    /*
+                                                        Con height:20vw; 
+                                                            - Fija la altura del contenedor al 20% de la ventana (viewport) 
+                                                            - Problema: si el contenido (texto) necesita más espacio que 20vw, se desborda del contenedor.                                                         
+                                                            - CSS no “reduce automáticamente” el tamaño del texto para que quepa; el contenedor simplemente tiene esa altura fija.  
+                                                            */
+                                  
+            padding:10px;
+                                                            
+
+
+
+            background: #262626;  
+            border-radius: 10px;
+            border: 5px solid black;               /* Ancho 5px, estilo sólido, color rojo */
+            /*opacity: 1; */                         /* /(No lo utilizo. No es necesario)
+                                                        - opacity: 0; → completamente invisible.
+                                                        - opacity: 0.5; → 50% transparente.
+                                                        - opacity: 1; → completamente opaco (sin transparencia).
+                                                    */
+     
+
+            
+        }
+
+.ObjetivoProfesional h1
+            {
+                color:#1472b6;                      /* Se define el color del Titulo de "Objetivo Profesional"*/
+                font-size: 30px;
+                
+            }
+
+.ObjetivoProfesional p    
+            {
+                color:white;
+                font-size: 20px;
+
+            }
+        
+
+
+/* ============================================================ PRACTICAS ============================================================*/
+.Practicas
+        {
+            grid-area: Practicas;
+
+
+
+             /* ======= CREO UN CUADRADO ======= */ 
+
+            width: 100%;                         /* Establece el ancho del Contenedor div (caja) . En este caso el 30% del ancho de la ventana*/
+            max-width: 18vw;                                        /* por aproximación 350px pero configuro que quiero el 30% directamente*/
+            min-width:200px;
+
+            height:auto;                            /* Establece la altura del Contenedor div (caja) . En este caso el 30% del ancho de la ventana*/
+                                                    /* por aproximación 350px pero configuro que quiero el 30% directamente*/
+                                
+            background: #262626;  
+            border-radius: 10px;
+            border: 5px solid black;               /* Ancho 5px, estilo sólido, color rojo */
+            padding:10px;
+
+            
+        }
+
+.Practicas h1
+            {
+                color:#1472b6;  
+                font-size: 30px;
+                
+            }
+
+.Practicas p    
+            {
+                color:white;
+                font-size: 20px;
+                
+            }
+
+
+
+
+/* ============================================================ EXPRIENCIA LABORAL ============================================================*/
+
+.ExperienciaLaboral
+        {
+            grid-area: Experiencia;  
+            
+
+            /* ======= CREO UN CUADRADO ======= */ 
+
+            width: 40vw;                    /* Establece el ancho del Contenedor div (caja) . En este caso el 30% del ancho de la ventana*/
+                                            /* por aproximación 350px pero configuro que quiero el 30% directamente*/
+            height:auto;                   /*Cambie a AUTO*/
+                                            
+                                            /* OLD - Establece la altura del Contenedor div (caja) . En este caso el 30% del ancho de la ventana*/
+                                            /* OLD - por aproximación 350px pero configuro que quiero el 30% directamente*/
+            max-width: 47vw;
+                                            
+
+
+            /*background: transparent linear-gradient(180deg, #38426F 0%, #71BAEF 100%) 0% 0% no-repeat padding-box;*/
+            background-color: #262626;
+            border-radius: 20px;
+            border: 5px solid black;
+            padding: 20px;
+               
+            
+        }
+
+
+.ExperienciaLaboral h1  
+        {
+            font-size: 37px;
+            color:#1472b6;
+           
+        }
+
+
+.ExperienciaLaboral p
+        {
+            font-size: 20px;
+            color:white;
+           
+        }   
+
+
+
+/* ============================================================ RESPONSIVE - MEDIA QUERY - MOVILES ============================================================*/
+
+
+                                                /* Para pantallas menores de 700px (por ejemplo para móviles) */
+@media (max-width: 700px)                       /* Se activa cuando el navegador es menor a 600px. Solo se aplica el ESTILO si la pantalla es de 700px o menos de ancho*/
+    {                     
+        nav ul
+            {
+                flex-direction: column;         /* La propiedad flex-direction se utliza en un contendor display:flex */ 
+            }                                   /* La propiedad se utiliza para definir la direccion en la que se colocan los elementos hijos */
+    }                                            /* En este caso, los elementos hijos se organizaran en columnas, cuando la pantalla sea menor o igual a 700px  */        
+                                                /* Tener en cuenta que por la propiedad de display:flex, por defecto ya se esta ejectuando flex-direction:row (pone en a misma fila cada elemento)*/
+
+                                                /* Ejemplos 
+                                                    
+                                                   flex-direction : column;     ----> Los elementos se colocan en columna, uno deabajo del otro, de arriba a abajo. Eje prinicipal es Vertical
+                                                            
+                                                                        1
+                                                                        2
+                                                                        3
+
+                                                     flex-direction : row;     ----> Los elementos se colocan en fila, uno a lado del otro, de izquierda a derecha. Eje principal es Horizontal.
+
+                                                                        1 2 3 
+                                                    */
+
+
+
+@media (max-width: 900px)                       /* Se activa cuando el navegador es menor a 600px. Solo se aplica el ESTILO si la pantalla es de 700px o menos de ancho*/
+    {                     
+        .Contenedor-logo-BarraDeMenu
+            {
+                width:100%;
+                flex-direction: column;         /* La propiedad flex-direction se utliza en un contendor display:flex */ 
+                align-items: center;            /* - Aunque no aprecio el cambio. Alinea verticalmente los hijos (logo y nav)
+
+                                                        align-items: center;        --->   se utiliza en Flexbox (display:flex), pero también funciona en CSS Grid(display:grid);
+
+                                                        align-content: center       --->    Funciona en Flexbox solo si hay varias líneas (flex-wrap: wrap) y se utiliza mas en Grid.
+                                                      */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+            }
+                                              
+        #logo img
+             {  
+                    width: 50%;                     /*  - Ajusta el tamaño del logo. (100% es un poco grande). Intenta ocupar todo el espacio del contenedor padre.*/
+                    height: auto;                   /*  Mantiene la proporción original del logo, para que no se deforme al cambiar el ancho.*/
+                    max-width:190px;                /*  - Limita el ancho del logo a 190 px, aunque el 50 % del contenedor fuera mayor.
+                                                        - Al añadir max-width, ya el logo con las listas de la barra de menu (<nav>) se alinea verticalmente.
+                                                        - Pero le aplico align-items: center;  ya que esa es su funcion. 
+                                                    */  
+            }
+        }    
+
+
+/* ============================================================ HOME ============================================================*/
+
+img.fondo                           /*img es la etiqueta y fondo es la clase*/
+        {
+            width: 100%;          /* La imagen ocupará todo el ancho */
+            margin: 0;            /* Elimina márgenes */
+            padding: 0;          /*  Elimina padding */
+        
+            height: auto;         /* Mantiene la proporción */
+           display: block;       /* Quita espacios en blanco */
+        }
+
+
+
+
+
+
+
+
+.Clase_Section_Fondo_Home               /* Contenedor Section */
+    {
+        position: relative;
+        width: 100%;
+        height: 100vh;                  /* Ocupa toda la pantalla */
+                                        /*
+                                            height: 100%        --->     El 100% se calcula en relación con el elemento padre inmediato.
+                                                                --->     Para que funcione, el padre también debe tener una altura definida (no basta con auto).
+                                                                --->     Si el contenedor padre no tiene un height fijo (o definido en % que vaya subiendo hasta html y body), 
+                                                                         entonces 100% no hará nada: se colapsa al contenido.
+
+
+                                            height: 100vh       --->     vh = viewport height (altura de la ventana del navegador).
+                                                                --->     100vh significa ocupa exactamente toda la pantalla visible (aunque el padre no tenga altura definida).
+                                                                --->     Es independiente del padre y siempre se calcula respecto a la ventana.                                                                      
+
+                                        */
+
+        overflow: hidden;               /*
+                                            - Significa: “oculta todo lo que sobresalga”.
+                                            - Si el contenido (texto, imagen, div, etc.) es más grande que el contenedor, la parte que se sale no se muestra.
+                                            - Se usa mucho en diseños con imágenes de fondo, sliders o animaciones para que nada se desborde.
+                                        */
+    }   
+
+.Fondo                              /* clase de la Imagen */
+    {
+        position: absolute;              /* Permite que la imagen ocupe todo el contenedor. Ocupa toda la pantalla */
+        width: 100%;                       
+        height: 100%;
+        object-fit: cover;              /*
+                                            - Sirve para decirle al navegador cómo debe encajar el contenido dentro de su contenedor
+                                            - Como background-size: cover 
+                                            - Escala la imagen para que cubra todo el contenedor.
+                                            - Mantiene la proporción (no se deforma).
+                                            - Si la imagen no tiene la misma proporción que el contenedor, se recorta lo que sobre.
+                                        */
+    }
+
+
+/* ============================================================ ABOUT ME ============================================================*/
+
+/* Reutilizo todos los codigos descripto arriba*/
+
+
+
+.About_me
+    {
+        display:flex;
+        background-color: #9c9c9ca9;
+        justify-content: center;                    /* Este codigo es lo que me permite que este centrado toda la caja negra*/
+
+    }
+
+.Contenedor_About_me
+    {
+       background-color: #262626;
+        width: 50vw;
+        height: auto;
+        border-radius: 20px;
+        border: 5px solid black;
+        padding: 10px;
+    }
+
+.Contenedor_About_me h1
+    {
+        font-size: 27px;
+        color: #1472b6;
+
+    }
+
+.Contenedor_About_me h2
+    {
+        font-size: 20px;
+        color: #1472b6;
+
+    }
+
+.Contenedor_About_me p
+    {
+        font-size: 17px;
+        color: white;
+
+    }
+
+
+.Personal
+    {
+                width: 20vw;
+        height: auto;
+        border-radius: 20px;
+
+    }
+    

@@ -117,10 +117,11 @@ nav li
 nav a                                       /* Selecciona todos los enlaces <a> que esten dentro de <nav>  (link de la barra de menu)*/
     {
         
-        font-size: 37px;                    /* Define el tamaño de la fuente de Home, Electronica, Indsutrial,etc. */
+        /*font-size: 37px;*/                    /* Define el tamaño de la fuente de Home, Electronica, Indsutrial,etc. */
         color:#1472b6;                    /* Define el color del texto de Home, Electronica, Indsutrial,etc.*/
         text-decoration: none;              /* Eliminamos el subrayado que trae por defecto la etiqueta <a> </a>*/
         
+        font-size: clamp(16px, 2vw, 28px);  /* mínimo 16px, fluye con la pantalla, máximo 28px */
     }
 
 
@@ -517,4 +518,5 @@ img.fondo                           /*img es la etiqueta y fondo es la clase*/
         border-radius: 20px;
 
     }
+
     
